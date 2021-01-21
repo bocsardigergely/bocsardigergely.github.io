@@ -3,6 +3,7 @@ layout: page
 title: By Tags
 permalink: /tags/
 ---
+<link rel="stylesheet" href="../styles.css">
 
 <style>
 .category-content a {
