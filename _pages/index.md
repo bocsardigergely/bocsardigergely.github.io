@@ -5,20 +5,19 @@ id: home
 permalink: /
 ---
 
-# Welcome! 🌱
+# Welcome to my Digital Garden! 🌱
 
-<p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your exploration.
-</p>
+If you would like to take a glimpse into my mind, I encourage you to find a [tag](/tags) that seems interesting, and dive right in!  
 
-This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
-
-The easiest way to get started is to read this [step-by-step guide explaining how to set this up from scratch](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll). If you need any help, my [DMs are open on Twitter (@vaillancourtmax)](https://twitter.com/vaillancourtmax). Say hi! 👋
-
-If this template helps you in any way, [consider buying me a coffee](https://ko-fi.com/maximevaillancourt)! ☕️
-
+If you're not familiar with the concept, [here](https://maggieappleton.com/garden-history) is a nice explanation!  
+In a nutshell, this is where I can reference all of my thoughts back and forth, without having to scroll through a timeline of notes published. If something relates to my current thought, I will link them together, and then the next time I am going down in that specific rabbit hole, I will see what I saw as connected before.  
+If it seems messy, it is mostly because it is messy, that's kind of the whole point. It's a garden, after all, and no matter how well cultivated, they will always have the wilderness in them.
 <style>
   .wrapper {
     max-width: 46em;
   }
 </style>
+
+  
+
+    

@@ -1,5 +1,6 @@
 ---
 title: Consistency is key
+tags: tag1
 ---
 
 Show up. Do the work. Be consistent.

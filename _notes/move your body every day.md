@@ -1,4 +1,5 @@
 ---
+tags: tag2
 ---
 
 Move your body every day. Benefits include:

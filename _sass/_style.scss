@@ -23,6 +23,8 @@ body {
   }
 }
 
+
+
 time {
   display: block;
   color: $color-subtext;
@@ -43,6 +45,13 @@ img {
   max-height: 75vh;
   border-radius: $border-radius;
 }
+
+.profile-pic{
+  max-width: 36px;
+  display: inline;
+  vertical-align: middle;
+}
+
 
 blockquote {
   padding: 1.5em;
@@ -104,6 +113,46 @@ a {
 
 nav {
   margin: 1em 0 3em;
+}
+
+.page-main-header{
+  padding: 1em 1em;
+  background-color: #defcc9;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.navbar{
+  padding-left: 0.5em;
+  border-radius: 4px;
+  vertical-align: middle;
+  
+}
+
+.nav{
+  list-style: none;
+
+}
+.nav li{
+  display: inline-block;
+
+}
+
+.nav li::after {
+  position: absolute;
+  width: 2px;
+  right: 0;
+  content: ' ';
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.nav li:last-child::after {
+  width: 0;
+} 
+
+.page-main-header a{
+  border-bottom: none;
 }
 
 #notes-entry-container {
