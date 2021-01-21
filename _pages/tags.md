@@ -1,9 +1,9 @@
 ---
 layout: page
 title: By Tags
-permalink: /tags/
+permalink: /tags
 ---
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="/styles.css">
 
 <style>
 .category-content a {
