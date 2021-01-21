@@ -5,7 +5,7 @@ toc: true
 ---
 This concept is dear to me very much.  
 It's one of those things that once you see it, you start to see it everywhere, and you're just wondering how did you miss it for so long.  
-It originates from Nassim Nicholas Taleb, specifically his book, [[antifragile]].  
+It originates from Nassim Nicholas Taleb, specifically his book, [[Antifragile]].  
   
 It is exactly what you'd think, the opposite of 'fragility'. However, where most people missed is the notion that this opposite is 'robust' or 'hard'. Let's look into that.  
 The most important component of fragility, is that shocks (be it literal or metaphorical) harm it. It suffers in a volatile environment.  
