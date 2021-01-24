@@ -1,5 +1,5 @@
 ---
-title: Dunning-Kruger-effect
+title: Dunning-Kruger effect
 tags: concept
 ---
 
