@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+
+  <link rel="canonical" href="/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Greg's Digital Garden">
+
+  <meta property="og:site_name" content="Greg's Digital Garden">
+
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  
+  <meta property="og:description" content="Greg's Digital Garden"/>
+  
+
+  
+  <meta property="og:title" content="Home">
+  <meta property="og:type" content="article">
+  
+
+  
+
+  <meta property="og:url" content="/" />
+
+  
+
+  <title>
+    
+      Greg's Digital Garden
+    
+  </title>
+</head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-47MT8RH84X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-47MT8RH84X');
+</script>
+  <body>
+    <nav><div class="page-main-header">
+    <img class="profile-pic" src="/assets/favicon.png">
+    <a href="https://www.gregbocsardi.com">
+        <b>gregbocsardi.com</b>
+    </a>
+    <p>The place where I come to think.</p>
+</div>
+<hr>
+<div class="navbar">
+    <ul class="nav">
+        <li><a class="internal-link" href="/"><b>Overview</b></a></li>
+        <li><b>   |   </b></li>
+        <li><a class="internal-link" href="/graph"><b>Graph</b></a></li>
+        <li><b>   |   </b></li>
+        <li><a class="internal-link" href="/tags"><b>By Tags</b></a></li>
+    </ul>
+</div>
+<hr></nav>
+    <div class="wrapper">
+      <main><content>
+  <h1 id="welcome-to-my-digital-garden-">Welcome to my Digital Garden! 🌱</h1>
+
+<p>If you would like to take a glimpse into my mind, I encourage you to find a <a href="/tags">tag</a> that seems interesting, and dive right in!</p>
+
+<p>If you’re not familiar with the concept, <a href="https://maggieappleton.com/garden-history">here</a> is a nice explanation!<br />
+In a nutshell, this is where I can reference all of my thoughts back and forth, without having to scroll through a timeline of notes published. If something relates to my current thought, I will link them together, and then the next time I am going down in that specific rabbit hole, I will see what I saw as connected before.<br />
+If it seems messy, it is mostly because it is messy, that’s kind of the whole point. It’s a garden, after all, and no matter how well cultivated, they will always have the wilderness in them.</p>
+<style>
+  .wrapper {
+    max-width: 46em;
+  }
+</style>
+
+
+</content>
+</main>
+      <footer><p><a class="internal-link" href="/about">About</a></p>
+<a  href="https://www.gregbocsardi.com">gregbocsardi.com</a>
+<p>Greg Bocsardi, 2020</p>
+</footer>
+    </div>
+
+    <!-- That file is not particularly elegant. This will need a refactor at some point. -->
+<style>
+  content a.internal-link {
+    border-color: #8ac561;
+    background-color: #eafddc;
+  }
+
+  #tooltip-wrapper {
+    background: white;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    font-size: 0.8em;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 100ms;
+  }
+
+  #tooltip-wrapper:after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		pointer-events: none;
+		background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+		width: 100%;
+		height: 75px;
+  }
+</style>
+
+<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
+  <div id='tooltip-content'>
+  </div>
+</div>
+
+<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</iframe>
+
+<script>
+  var opacityTimeout;
+  var contentTimeout;
+  var transitionDurationMs = 100;
+
+  var iframe = document.getElementById('link-preview-iframe')
+  var tooltipWrapper = document.getElementById('tooltip-wrapper')
+  var tooltipContent = document.getElementById('tooltip-content')
+
+  function hideTooltip() {
+    opacityTimeout = setTimeout(function() {
+      tooltipWrapper.style.opacity = 0;
+      contentTimeout = setTimeout(function() {
+        tooltipContent.innerHTML = '';
+        tooltipWrapper.style.display = 'none';
+      }, transitionDurationMs + 1);
+    }, transitionDurationMs)
+  }
+
+  function showTooltip(event) {
+    var elem = event.target;
+    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
+    var top = window.pageYOffset || document.documentElement.scrollTop
+
+    if (event.target.host === window.location.host) {
+      iframe.src = event.target.href
+      iframe.onload = function() {
+        tooltipContentHtml = ''
+        tooltipContentHtml += '<div style="font-weight: bold;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
+        tooltipContentHtml += iframe.contentWindow.document.querySelector('content').innerHTML
+
+        tooltipContent.innerHTML = tooltipContentHtml
+
+        tooltipWrapper.style.display = 'block';
+        setTimeout(function() {
+          tooltipWrapper.style.opacity = 1;
+        }, 1)
+      }
+
+      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
+      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
+      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
+      }
+
+      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = "10px";
+      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
+      }
+    }
+  }
+
+  function setupListeners(linkElement) {
+    linkElement.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+      showTooltip(event);
+    });
+
+    tooltipWrapper.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+    });
+  }
+
+  document.querySelectorAll('content a').forEach(setupListeners);
+</script>
+
+  </body>
+</html>
