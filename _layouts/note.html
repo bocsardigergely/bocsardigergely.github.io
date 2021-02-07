@@ -12,6 +12,12 @@ layout: default
   </div>
 
   <div id="notes-entry-container">
+    {%- if page.tags contains "in-progress" -%}
+    <div>
+      <h1>🌱</h1>
+      <h2>This note is currently just a seedling, but it might grow in the future! </h2>
+    </div>
+    {% endif %}
     <content>
       {{ content }}
     </content>
